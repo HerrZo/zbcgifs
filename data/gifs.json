@@ -1,0 +1,194 @@
+{
+  "curriculum": {
+    "biologie": {
+      "label": "Biologie",
+      "note": "LehrplanPLUS Bayern Gymnasium (Natur und Technik 5/6 sowie Biologie 8 bis 13)",
+      "grades": [
+        {
+          "code": "NUT5",
+          "title": "Jahrgangsstufe 5 (Natur und Technik)",
+          "items": [
+            { "id": "NT5 LB 1.1", "name": "Arbeitsmethoden (Naturwissenschaftliches Arbeiten)" },
+            { "id": "NT5 LB 1.2", "name": "Themenbereiche und Konzepte" },
+            { "id": "NT5 LB 2.1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "NT5 LB 2.2", "name": "Biologie: Die Wissenschaft von den Lebewesen" },
+            { "id": "NT5 LB 2.3", "name": "Der Mensch als Lebewesen" },
+            { "id": "NT5 LB 2.4", "name": "Samenpflanzen als Lebewesen" },
+            { "id": "NT5 LB 2.5", "name": "Ökosystem Grünland" }
+          ]
+        },
+        {
+          "code": "NUT6",
+          "title": "Jahrgangsstufe 6 (Natur und Technik)",
+          "items": [
+            { "id": "NT6 LB 1.1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "NT6 LB 1.2", "name": "Samenpflanzen als Lebewesen" },
+            { "id": "NT6 LB 1.3", "name": "Biodiversität bei Wirbeltieren: Variabilität und Angepasstheit" },
+            { "id": "NT6 LB 1.4", "name": "Verwandtschaft der Wirbeltiere und Evolution" }
+          ]
+        },
+        {
+          "code": "BIO8",
+          "title": "Jahrgangsstufe 8",
+          "items": [
+            { "id": "B8 LB 1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "B8 LB 2", "name": "Informationsaufnahme, -verarbeitung und Reaktion beim Menschen" },
+            { "id": "B8 LB 3", "name": "Fortpflanzung und Individualentwicklung des Menschen" }
+          ]
+        },
+        {
+          "code": "BIO9",
+          "title": "Jahrgangsstufe 9",
+          "items": [
+            { "id": "B9 LB 1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "B9 LB 2", "name": "Mikroorganismen in der Biotechnologie" },
+            { "id": "B9 LB 3", "name": "Genetik und Gentechnik" },
+            { "id": "B9 LB 4", "name": "Evolution" }
+          ]
+        },
+        {
+          "code": "BIO10",
+          "title": "Jahrgangsstufe 10",
+          "items": [
+            { "id": "B10 LB 1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "B10 LB 2", "name": "Ökosystem Mensch" },
+            { "id": "B10 LB 3", "name": "Stoff- und Energieumwandlung im Menschen" },
+            { "id": "B10 LB 4", "name": "Vergangenheit und Zukunft des Menschen" }
+          ]
+        },
+        {
+          "code": "BIO12",
+          "title": "Jahrgangsstufe 12",
+          "items": [
+            { "id": "B12 LB 1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "B12 LB 2", "name": "Genetik und Gentechnik" },
+            { "id": "B12 LB 3", "name": "Evolution" },
+            { "id": "B12 LB 4", "name": "Verhaltensökologie: Evolution und Angepasstheit von Verhalten" }
+          ]
+        },
+        {
+          "code": "BIO13",
+          "title": "Jahrgangsstufe 13",
+          "items": [
+            { "id": "B13 LB 1", "name": "Erkenntnisse gewinnen, kommunizieren, bewerten" },
+            { "id": "B13 LB 2", "name": "Neuronale Informationsverarbeitung" },
+            { "id": "B13 LB 3", "name": "Stoffwechselphysiologie (Enzymatik, Fotosynthese, Dissimilation)" },
+            { "id": "B13 LB 4", "name": "Ökosysteme und ihre Dynamik" }
+          ]
+        }
+      ]
+    },
+    "chemie": {
+      "label": "Chemie",
+      "note": "Dargestellt nach dem LehrplanPLUS für das sprachliche und wirtschaftswissenschaftliche Gymnasium (SG/WSG)",
+      "grades": [
+        {
+          "code": "CHEM9",
+          "title": "Jahrgangsstufe 9 (SG/WSG)",
+          "items": [
+            { "id": "C9 LB 1", "name": "Wie Chemiker denken und arbeiten" },
+            { "id": "C9 LB 2", "name": "Stoffe und ihre Eigenschaften: Vom Stoff zum Teilchenmodell" },
+            { "id": "C9 LB 3", "name": "Chemische Reaktion: Vom Teilchenmodell zum Daltonschen Atommodell" },
+            { "id": "C9 LB 4", "name": "Chemische Verbindungen: Vom Dalton-Modell zum Kern-Hülle-Modell" },
+            { "id": "C9 LB 5", "name": "Atombau und gekürztes Periodensystem" },
+            { "id": "C9 LB 6", "name": "Donator-Akzeptor-Konzept: Elektronenübergänge und Ionenbildung" }
+          ]
+        },
+        {
+          "code": "CHEM10",
+          "title": "Jahrgangsstufe 10 (SG/WSG)",
+          "items": [
+            { "id": "C10 LB 1", "name": "Wie Chemiker denken und arbeiten" },
+            { "id": "C10 LB 2", "name": "Moleküle: Orbitalmodell und Elektronenpaarabstoßungsmodell" },
+            { "id": "C10 LB 3", "name": "Wechselwirkungskonzept: Anziehung zwischen Teilchen" },
+            { "id": "C10 LB 4", "name": "Donator-Akzeptor-Konzept bei Protonenübergängen (Säure-Base)" },
+            { "id": "C10 LB 5", "name": "Donator-Akzeptor-Konzept bei Redoxreaktionen in wässriger Lösung" }
+          ]
+        },
+        {
+          "code": "CHEM12",
+          "title": "Jahrgangsstufe 12",
+          "items": [
+            { "id": "C12 LB 1", "name": "Wie Chemikerinnen und Chemiker denken und arbeiten" },
+            { "id": "C12 LB 2", "name": "Atombau und Periodensystem" },
+            { "id": "C12 LB 3", "name": "Analytik" },
+            { "id": "C12 LB 4", "name": "Chemische Bindung" },
+            { "id": "C12 LB 5", "name": "Kohlenwasserstoffe: Energieträger und Reaktionspartner" },
+            { "id": "C12 LB 6", "name": "Reaktionsgeschwindigkeit: Ermittlung und Deutung auf Teilchenebene" }
+          ]
+        },
+        {
+          "code": "CHEM13",
+          "title": "Jahrgangsstufe 13",
+          "items": [
+            { "id": "C13 LB 1", "name": "Wie Chemikerinnen und Chemiker denken und arbeiten" },
+            { "id": "C13 LB 2", "name": "Farbigkeit und Farbstoffe" },
+            { "id": "C13 LB 3", "name": "Säure-Base-Gleichgewichte: Quantitative Analytik und Anwendung" },
+            { "id": "C13 LB 4", "name": "Natürliche und synthetische Makromoleküle" },
+            { "id": "C13 LB 5", "name": "Chemie und Nachhaltigkeit" }
+          ]
+        }
+      ]
+    }
+  },
+  "gifs": [
+    {
+      "id": "elektronegativitaet-tauziehen",
+      "title": "Elektronegativität als Tauziehen: H₂ und HCl",
+      "file": "./gifs/elektronegativitaet-tauziehen.gif",
+      "categories": ["C10 LB 3", "C12 LB 4"],
+      "tags": [
+        "Elektronegativität",
+        "Polare Atombindung",
+        "Wasserstoff",
+        "Chlorwasserstoff"
+      ],
+      "hiddenTags": [
+        "Tauziehen",
+        "H2",
+        "HCl",
+        "Chlor",
+        "Bindungselektronen",
+        "Elektronenpaarbindung",
+        "unpolare Bindung",
+        "Pauling",
+        "Strichmännchen",
+        "Anziehungskraft",
+        "Kovalente Bindung",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-10"
+    },
+    {
+      "id": "wassermolekuel-partialladungen",
+      "title": "Partialladungen am Wassermolekül",
+      "file": "./gifs/wassermolekuel-partialladungen.gif",
+      "categories": ["C10 LB 2", "C10 LB 3", "C12 LB 4", "B10 LB 3"],
+      "tags": [
+        "Wassermolekül",
+        "Partialladung",
+        "Dipolmolekül",
+        "Elektronegativität"
+      ],
+      "hiddenTags": [
+        "H2O",
+        "Wasser",
+        "Sauerstoff",
+        "Wasserstoff",
+        "delta plus",
+        "delta minus",
+        "δ+",
+        "δ-",
+        "polare Elektronenpaarbindung",
+        "Bindungspolarität",
+        "freie Elektronenpaare",
+        "Dipol",
+        "CHEM10",
+        "CHEM12",
+        "BIO10"
+      ],
+      "createdAt": "2026-11-10"
+    }
+  ]
+}

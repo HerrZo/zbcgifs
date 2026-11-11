@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-11-11",
+    "scope": "app",
+    "shape": "app screen",
+    "theme": "Coral",
+    "axes": "light/grotesk-sans/warm",
+    "hero": "none",
+    "nav": "top bar with hover curriculum menus",
+    "footer": "single-line curriculum note",
+    "imagery": "real Manim GIF animations",
+    "photos": [],
+    "entry": "index.html",
+    "fingerprint": "app-search-grid",
+    "sections": ["search-toolbar", "gif-grid"],
+    "signature": "live search and PowerPoint GIF index",
+    "waived": [],
+    "prompt": "ZBCgifs Manim-Animationen für Biologie und Chemie Lehrkräfte"
+  }
+]
