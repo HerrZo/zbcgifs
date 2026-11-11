@@ -2,8 +2,6 @@
  * nav: top bar with hover curriculum menus · signature: live search and PowerPoint GIF index · states: loading, empty, error, full
  * axes: light/grotesk-sans/warm · posture: restrained · contrast: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P5 H5 E5 S4 R5 V5 · weakest: S, generic search bars look interchangeable; anchored header around Bavarian LehrplanPLUS BIO and CHEM curriculum dropdowns and direct PowerPoint copy actions */
-@import url("./tokens.css");
-@import url("./base.css");
 
 .app-header {
   position: sticky;
@@ -446,6 +444,8 @@
 }
 
 .gif-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

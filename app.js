@@ -88,7 +88,7 @@ const FALLBACK_DATA = {
           items: [
             { id: "C9 LB 1", name: "Wie Chemiker denken und arbeiten" },
             { id: "C9 LB 2", name: "Stoffe und ihre Eigenschaften: Vom Stoff zum Teilchenmodell" },
-            { id: "C9 LB 3", name: "Chemische Reaktion: Vom Teilchenmodell zum Daltonschen Atommodell" },
+            { id: "C9 LB 3", "name": "Chemische Reaktion: Vom Teilchenmodell zum Daltonschen Atommodell" },
             { id: "C9 LB 4", name: "Chemische Verbindungen: Vom Dalton-Modell zum Kern-Hülle-Modell" },
             { id: "C9 LB 5", name: "Atombau und gekürztes Periodensystem" },
             { id: "C9 LB 6", name: "Donator-Akzeptor-Konzept: Elektronenübergänge und Ionenbildung" }
@@ -137,10 +137,26 @@ const FALLBACK_DATA = {
       title: "Elektronegativität als Tauziehen: H₂ und HCl",
       file: "./gifs/elektronegativitaet-tauziehen.gif",
       categories: ["C10 LB 3", "C12 LB 4"],
-      tags: ["Elektronegativität", "Polare Atombindung", "Wasserstoff", "Chlorwasserstoff"],
+      tags: [
+        "Elektronegativität",
+        "Polare Atombindung",
+        "Wasserstoff",
+        "Chlorwasserstoff"
+      ],
       hiddenTags: [
-        "Tauziehen", "H2", "HCl", "Chlor", "Bindungselektronen", "Elektronenpaarbindung",
-        "unpolare Bindung", "Pauling", "Strichmännchen", "Anziehungskraft", "Kovalente Bindung", "CHEM10", "CHEM12"
+        "Tauziehen",
+        "H2",
+        "HCl",
+        "Chlor",
+        "Bindungselektronen",
+        "Elektronenpaarbindung",
+        "unpolare Bindung",
+        "Pauling",
+        "Strichmännchen",
+        "Anziehungskraft",
+        "Kovalente Bindung",
+        "CHEM10",
+        "CHEM12"
       ],
       createdAt: "2026-11-10"
     },
@@ -149,10 +165,28 @@ const FALLBACK_DATA = {
       title: "Partialladungen am Wassermolekül",
       file: "./gifs/wassermolekuel-partialladungen.gif",
       categories: ["C10 LB 2", "C10 LB 3", "C12 LB 4", "B10 LB 3"],
-      tags: ["Wassermolekül", "Partialladung", "Dipolmolekül", "Elektronegativität"],
+      tags: [
+        "Wassermolekül",
+        "Partialladung",
+        "Dipolmolekül",
+        "Elektronegativität"
+      ],
       hiddenTags: [
-        "H2O", "Wasser", "Sauerstoff", "Wasserstoff", "delta plus", "delta minus",
-        "δ+", "δ-", "polare Elektronenpaarbindung", "Bindungspolarität", "freie Elektronenpaare", "Dipol", "CHEM10", "CHEM12", "BIO10"
+        "H2O",
+        "Wasser",
+        "Sauerstoff",
+        "Wasserstoff",
+        "delta plus",
+        "delta minus",
+        "δ+",
+        "δ-",
+        "polare Elektronenpaarbindung",
+        "Bindungspolarität",
+        "freie Elektronenpaare",
+        "Dipol",
+        "CHEM10",
+        "CHEM12",
+        "BIO10"
       ],
       createdAt: "2026-11-10"
     }
@@ -169,6 +203,9 @@ const FALLBACK_DATA = {
 
   const categoryMap = new Map();
   const seriesMap = new Map();
+  const lbButtonMap = new Map();
+  const cardElementMap = new Map();
+  let urlSyncTimer = null;
 
   const searchInput = document.getElementById("search-input");
   const resetBtn = document.getElementById("reset-btn");
@@ -190,6 +227,15 @@ const FALLBACK_DATA = {
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxClose = document.getElementById("lightbox-close");
   const lightboxDownload = document.getElementById("lightbox-download");
+
+  function normalizeText(str) {
+    return (str || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/₂/g, "2")
+      .replace(/₃/g, "3");
+  }
 
   function parseStepInfo(item) {
     const match = /^(.*?)\s*\((\d+)\)\s*$/.exec(item.title || "");
@@ -221,6 +267,25 @@ const FALLBACK_DATA = {
     });
 
     appData.gifs.forEach((gif) => {
+      const catStrings = (gif.categories || []).map((c) => {
+        const m = categoryMap.get(c);
+        return m ? `${c} ${m.name} ${m.gradeCode}` : c;
+      });
+      const subjSet = new Set();
+      (gif.categories || []).forEach((c) => {
+        const m = categoryMap.get(c);
+        if (m) subjSet.add(m.subject);
+      });
+      gif._subjects = subjSet;
+      gif._haystack = normalizeText(
+        [
+          gif.title,
+          ...(gif.tags || []),
+          ...(gif.hiddenTags || []),
+          ...catStrings
+        ].join(" ")
+      );
+
       const info = parseStepInfo(gif);
       if (info) {
         if (!seriesMap.has(info.baseName)) {
@@ -239,13 +304,19 @@ const FALLBACK_DATA = {
   }
 
   function countGifsForCategory(catId) {
-    return appData.gifs.filter((g) => (g.categories || []).includes(catId)).length;
+    let count = 0;
+    for (let i = 0; i < appData.gifs.length; i++) {
+      const cats = appData.gifs[i].categories;
+      if (cats && cats.includes(catId)) count++;
+    }
+    return count;
   }
 
-  function renderDropdowns() {
+  function buildDropdownsOnce() {
+    lbButtonMap.clear();
     const renderSubjectGrades = (subjKey, container) => {
       if (!container || !appData.curriculum[subjKey]) return;
-      container.innerHTML = "";
+      const frag = document.createDocumentFragment();
       appData.curriculum[subjKey].grades.forEach((grade) => {
         const block = document.createElement("div");
         block.className = "grade-block";
@@ -263,7 +334,7 @@ const FALLBACK_DATA = {
           const li = document.createElement("li");
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "lb-btn" + (state.category === item.id ? " is-selected" : "");
+          btn.className = "lb-btn";
           btn.innerHTML = `
             <span class="lb-label-wrap">
               <span class="lb-id">${item.id}:</span>
@@ -281,67 +352,34 @@ const FALLBACK_DATA = {
             if (document.activeElement && typeof document.activeElement.blur === "function") {
               document.activeElement.blur();
             }
-            syncUrlAndRender();
+            applyFilters(true);
           });
+          lbButtonMap.set(item.id, btn);
           li.appendChild(btn);
           ul.appendChild(li);
         });
 
         block.appendChild(ul);
-        container.appendChild(block);
+        frag.appendChild(block);
       });
+      container.innerHTML = "";
+      container.appendChild(frag);
     };
 
     renderSubjectGrades("biologie", bioMenuContent);
     renderSubjectGrades("chemie", chemMenuContent);
+  }
 
+  function updateDropdownSelectionState() {
+    for (const [id, btn] of lbButtonMap.entries()) {
+      btn.classList.toggle("is-selected", state.category === id);
+    }
     const activeCatMeta = state.category ? categoryMap.get(state.category) : null;
-    const isBioActive = state.subject === "biologie" || (activeCatMeta && activeCatMeta.subject === "biologie");
-    const isChemActive = state.subject === "chemie" || (activeCatMeta && activeCatMeta.subject === "chemie");
+    const isBioActive = state.subject === "biologie" || Boolean(activeCatMeta && activeCatMeta.subject === "biologie");
+    const isChemActive = state.subject === "chemie" || Boolean(activeCatMeta && activeCatMeta.subject === "chemie");
 
     if (bioTrigger) bioTrigger.setAttribute("data-active-subject", isBioActive ? "true" : "false");
     if (chemTrigger) chemTrigger.setAttribute("data-active-subject", isChemActive ? "true" : "false");
-  }
-
-  function normalizeText(str) {
-    return (str || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/₂/g, "2")
-      .replace(/₃/g, "3");
-  }
-
-  function matchesGif(gif) {
-    if (state.category) {
-      if (!(gif.categories || []).includes(state.category)) return false;
-    }
-    if (state.subject) {
-      const belongsToSubject = (gif.categories || []).some((catId) => {
-        const meta = categoryMap.get(catId);
-        return meta && meta.subject === state.subject;
-      });
-      if (!belongsToSubject) return false;
-    }
-    const q = normalizeText(state.query.trim());
-    if (!q) return true;
-
-    const terms = q.split(/\s+/).filter(Boolean);
-    const catStrings = (gif.categories || []).map((c) => {
-      const m = categoryMap.get(c);
-      return m ? `${c} ${m.name} ${m.gradeCode}` : c;
-    });
-
-    const haystack = normalizeText(
-      [
-        gif.title,
-        ...(gif.tags || []),
-        ...(gif.hiddenTags || []),
-        ...catStrings
-      ].join(" ")
-    );
-
-    return terms.every((t) => haystack.includes(t));
   }
 
   async function copyGifForPowerPoint(gif, btnEl) {
@@ -402,45 +440,12 @@ const FALLBACK_DATA = {
     lightboxDialog.showModal();
   }
 
-  function renderCards() {
+  function buildCardsOnce() {
     if (!gifGrid) return;
-    const filtered = appData.gifs.filter(matchesGif);
-    if (resultCountEl) {
-      resultCountEl.textContent = String(filtered.length);
-    }
+    cardElementMap.clear();
+    const frag = document.createDocumentFragment();
 
-    if (activeFilterContainer) {
-      activeFilterContainer.innerHTML = "";
-      if (state.category) {
-        const meta = categoryMap.get(state.category);
-        const pill = document.createElement("span");
-        pill.className = "active-filter-pill";
-        pill.textContent = meta ? `${meta.id}: ${meta.name}` : state.category;
-        activeFilterContainer.appendChild(pill);
-      } else if (state.subject) {
-        const pill = document.createElement("span");
-        pill.className = "active-filter-pill";
-        pill.textContent = state.subject === "biologie" ? "Fach: Biologie" : "Fach: Chemie (SG/WSG)";
-        activeFilterContainer.appendChild(pill);
-      }
-    }
-
-    const hasActiveFilter = Boolean(state.query.trim() || state.category || state.subject);
-    if (resetBtn) {
-      resetBtn.hidden = !hasActiveFilter;
-    }
-
-    if (filtered.length === 0) {
-      gifGrid.hidden = true;
-      if (emptyState) emptyState.hidden = false;
-      return;
-    }
-
-    gifGrid.hidden = false;
-    if (emptyState) emptyState.hidden = true;
-    gifGrid.innerHTML = "";
-
-    filtered.forEach((gif) => {
+    appData.gifs.forEach((gif, idx) => {
       const article = document.createElement("article");
       article.className = "gif-card";
       article.id = `card-${gif.id}`;
@@ -449,7 +454,8 @@ const FALLBACK_DATA = {
       stageBtn.type = "button";
       stageBtn.className = "gif-stage-btn";
       stageBtn.setAttribute("aria-label", `${gif.title} vergrößern`);
-      stageBtn.innerHTML = `<img class="gif-preview" src="${gif.file}" alt="${gif.title}" width="1280" height="720" loading="lazy">`;
+      const priorityAttr = idx < 2 ? 'fetchpriority="high"' : 'loading="lazy"';
+      stageBtn.innerHTML = `<img class="gif-preview" src="${gif.file}" alt="${gif.title}" width="1280" height="720" ${priorityAttr} decoding="async">`;
       stageBtn.addEventListener("click", () => openLightbox(gif));
       article.appendChild(stageBtn);
 
@@ -479,7 +485,7 @@ const FALLBACK_DATA = {
         chip.addEventListener("click", () => {
           state.category = state.category === catId ? "" : catId;
           state.subject = "";
-          syncUrlAndRender();
+          applyFilters(true);
         });
         catRow.appendChild(chip);
       });
@@ -495,7 +501,7 @@ const FALLBACK_DATA = {
         tagBtn.addEventListener("click", () => {
           state.query = tag;
           if (searchInput) searchInput.value = tag;
-          syncUrlAndRender();
+          applyFilters(true);
         });
         tagsRow.appendChild(tagBtn);
       });
@@ -522,15 +528,15 @@ const FALLBACK_DATA = {
             sp.textContent = `(${sEntry.stepNum})`;
             sp.title = sEntry.gif.title;
             sp.addEventListener("click", () => {
-              const targetCard = document.getElementById(`card-${sEntry.gif.id}`);
-              if (targetCard) {
+              const targetCard = cardElementMap.get(sEntry.gif.id);
+              if (targetCard && !targetCard.hidden) {
                 targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
               } else {
                 state.query = stepInfo.baseName;
                 state.category = "";
                 state.subject = "";
                 if (searchInput) searchInput.value = stepInfo.baseName;
-                syncUrlAndRender();
+                applyFilters(true);
               }
             });
             stepsWrap.appendChild(sp);
@@ -579,11 +585,15 @@ const FALLBACK_DATA = {
       body.appendChild(actionsRow);
 
       article.appendChild(body);
-      gifGrid.appendChild(article);
+      cardElementMap.set(gif.id, article);
+      frag.appendChild(article);
     });
+
+    gifGrid.innerHTML = "";
+    gifGrid.appendChild(frag);
   }
 
-  function syncUrlAndRender() {
+  function writeUrlState() {
     const params = new URLSearchParams();
     if (state.query.trim()) params.set("q", state.query.trim());
     if (state.category) params.set("cat", state.category);
@@ -591,9 +601,76 @@ const FALLBACK_DATA = {
     const qs = params.toString();
     const newUrl = window.location.pathname + (qs ? `?${qs}` : "");
     window.history.replaceState(null, "", newUrl);
+  }
 
-    renderDropdowns();
-    renderCards();
+  function applyFilters(immediateUrlSync) {
+    if (urlSyncTimer) clearTimeout(urlSyncTimer);
+    if (immediateUrlSync) {
+      writeUrlState();
+    } else {
+      urlSyncTimer = setTimeout(writeUrlState, 160);
+    }
+
+    updateDropdownSelectionState();
+
+    const q = normalizeText(state.query.trim());
+    const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+    let visibleCount = 0;
+
+    for (let i = 0; i < appData.gifs.length; i++) {
+      const gif = appData.gifs[i];
+      const cardEl = cardElementMap.get(gif.id);
+      if (!cardEl) continue;
+
+      let match = true;
+      if (state.category && !(gif.categories || []).includes(state.category)) {
+        match = false;
+      } else if (state.subject && (!gif._subjects || !gif._subjects.has(state.subject))) {
+        match = false;
+      } else if (terms.length > 0) {
+        for (let t = 0; t < terms.length; t++) {
+          if (!gif._haystack.includes(terms[t])) {
+            match = false;
+            break;
+          }
+        }
+      }
+
+      cardEl.hidden = !match;
+      if (match) visibleCount++;
+    }
+
+    if (resultCountEl) {
+      resultCountEl.textContent = String(visibleCount);
+    }
+
+    if (activeFilterContainer) {
+      activeFilterContainer.innerHTML = "";
+      if (state.category) {
+        const meta = categoryMap.get(state.category);
+        const pill = document.createElement("span");
+        pill.className = "active-filter-pill";
+        pill.textContent = meta ? `${meta.id}: ${meta.name}` : state.category;
+        activeFilterContainer.appendChild(pill);
+      } else if (state.subject) {
+        const pill = document.createElement("span");
+        pill.className = "active-filter-pill";
+        pill.textContent = state.subject === "biologie" ? "Fach: Biologie" : "Fach: Chemie (SG/WSG)";
+        activeFilterContainer.appendChild(pill);
+      }
+    }
+
+    const hasActiveFilter = Boolean(state.query.trim() || state.category || state.subject);
+    if (resetBtn) {
+      resetBtn.hidden = !hasActiveFilter;
+    }
+
+    if (gifGrid) {
+      gifGrid.hidden = visibleCount === 0;
+    }
+    if (emptyState) {
+      emptyState.hidden = visibleCount > 0;
+    }
   }
 
   function readUrlState() {
@@ -609,13 +686,17 @@ const FALLBACK_DATA = {
     state.category = "";
     state.subject = "";
     if (searchInput) searchInput.value = "";
-    syncUrlAndRender();
+    applyFilters(true);
+  }
+
+  function getCatalogSignature(gifsArr) {
+    return (gifsArr || []).map((g) => `${g.id}:${g.title}:${(g.categories || []).join(",")}`).join("|");
   }
 
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       state.query = e.target.value;
-      syncUrlAndRender();
+      applyFilters(false);
     });
   }
 
@@ -632,7 +713,7 @@ const FALLBACK_DATA = {
     bioAllBtn.addEventListener("click", () => {
       state.subject = state.subject === "biologie" ? "" : "biologie";
       state.category = "";
-      syncUrlAndRender();
+      applyFilters(true);
     });
   }
 
@@ -640,7 +721,7 @@ const FALLBACK_DATA = {
     chemAllBtn.addEventListener("click", () => {
       state.subject = state.subject === "chemie" ? "" : "chemie";
       state.category = "";
-      syncUrlAndRender();
+      applyFilters(true);
     });
   }
 
@@ -653,20 +734,27 @@ const FALLBACK_DATA = {
 
   readUrlState();
   buildMaps();
-  renderDropdowns();
-  renderCards();
+  buildDropdownsOnce();
+  buildCardsOnce();
+  applyFilters(false);
+
+  const initialSig = getCatalogSignature(appData.gifs);
 
   fetch("./data/gifs.json")
     .then((res) => (res.ok ? res.json() : Promise.reject(new Error("Status " + res.status))))
     .then((json) => {
       if (json && Array.isArray(json.gifs)) {
-        appData = json;
-        buildMaps();
-        renderDropdowns();
-        renderCards();
+        const fetchedSig = getCatalogSignature(json.gifs);
+        if (fetchedSig !== initialSig) {
+          appData = json;
+          buildMaps();
+          buildDropdownsOnce();
+          buildCardsOnce();
+          applyFilters(false);
+        }
       }
     })
     .catch(() => {
-      // Fallback data already rendered
+      // Initial catalog already rendered
     });
 })();

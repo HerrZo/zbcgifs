@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZBCgifs: Manim-Animationen für Biologie und Chemie</title>
   <meta name="description" content="Freie Manim-Animationen als transparente GIFs für den Biologie- und Chemieunterricht am bayerischen Gymnasium.">
+  <link rel="stylesheet" href="./tokens.css">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+  </noscript>
 </head>
 <body>
   <header class="app-header">
@@ -117,7 +123,7 @@
     <section id="gif-grid" class="gif-grid" aria-label="Gefundene GIF-Animationen">
       <article class="gif-card" id="card-elektronegativitaet-tauziehen">
         <button type="button" class="gif-stage-btn" aria-label="Elektronegativität als Tauziehen: H₂ und HCl vergrößern">
-          <img class="gif-preview" src="./gifs/elektronegativitaet-tauziehen.gif" alt="Elektronegativität als Tauziehen: H₂ und HCl" width="1280" height="720" fetchpriority="high">
+          <img class="gif-preview" src="./gifs/elektronegativitaet-tauziehen.gif" alt="Elektronegativität als Tauziehen: H₂ und HCl" width="1280" height="720" fetchpriority="high" decoding="async">
         </button>
         <div class="card-body">
           <div class="card-header-row">
@@ -153,7 +159,7 @@
 
       <article class="gif-card" id="card-wassermolekuel-partialladungen">
         <button type="button" class="gif-stage-btn" aria-label="Partialladungen am Wassermolekül vergrößern">
-          <img class="gif-preview" src="./gifs/wassermolekuel-partialladungen.gif" alt="Partialladungen am Wassermolekül" width="1280" height="720" fetchpriority="high">
+          <img class="gif-preview" src="./gifs/wassermolekuel-partialladungen.gif" alt="Partialladungen am Wassermolekül" width="1280" height="720" fetchpriority="high" decoding="async">
         </button>
         <div class="card-body">
           <div class="card-header-row">
@@ -199,7 +205,7 @@
         <button type="button" id="lightbox-close" class="btn-secondary">Schließen</button>
       </div>
     </div>
-    <img id="lightbox-img" class="lightbox-img" src="./gifs/elektronegativitaet-tauziehen.gif" alt="Vergrößerte Vorschau" width="1280" height="720">
+    <img id="lightbox-img" class="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vergrößerte Vorschau" width="1280" height="720" decoding="async">
   </dialog>
 
   <footer class="app-footer">
@@ -209,6 +215,6 @@
     </div>
   </footer>
 
-  <script src="./app.js"></script>
+  <script src="./app.js" defer></script>
 </body>
 </html>

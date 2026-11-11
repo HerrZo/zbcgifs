@@ -1,10 +1,11 @@
-"""Hilfsskript zum Indexieren neuer Manim-GIFs für die ZBCgifs-Website."""
+"""Hilfsskript zum Indexieren und Komprimieren neuer Manim-GIFs für die ZBCgifs-Website."""
 import argparse
 import datetime
 import json
 import os
 import re
 import shutil
+import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -26,6 +27,27 @@ def slugify(text: str) -> str:
     return s or "animation"
 
 
+def optimize_gif_if_possible(gif_path: Path) -> None:
+    """Optimiert ein Manim-GIF verlustarm (Transparenz, 64 Farben, Rectangle-Diff, 24 fps)."""
+    tmp_path = gif_path.with_name(f".opt_{gif_path.name}")
+    try:
+        before_size = gif_path.stat().st_size
+        cmd = [
+            "ffmpeg", "-y", "-v", "error", "-i", str(gif_path),
+            "-lavfi",
+            "fps=24,split[s0][s1];[s0]palettegen=reserve_transparent=1:max_colors=64[p];[s1][p]paletteuse=dither=none:diff_mode=rectangle",
+            str(tmp_path),
+        ]
+        subprocess.run(cmd, check=True)
+        if tmp_path.exists() and tmp_path.stat().st_size < before_size:
+            tmp_path.replace(gif_path)
+        elif tmp_path.exists():
+            tmp_path.unlink()
+    except Exception:
+        if tmp_path.exists():
+            tmp_path.unlink()
+
+
 def add_or_update_gif(
     src_gif: str,
     title: str,
@@ -42,6 +64,8 @@ def add_or_update_gif(
 
     if os.path.abspath(src_gif) != os.path.abspath(dest_gif):
         shutil.copy2(src_gif, dest_gif)
+
+    optimize_gif_if_possible(dest_gif)
 
     with open(DATA_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
