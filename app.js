@@ -289,6 +289,119 @@ const FALLBACK_DATA = {
   },
   "gifs": [
     {
+      "id": "carbonsaeuren-wechselwirkungen",
+      "title": "Carbonsäuren: Wechselwirkungen (Ethansäure)",
+      "file": "./gifs/carbonsaeuren-wechselwirkungen.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "Carbonsäuren",
+        "Ethansäure",
+        "LDWW",
+        "Dipol-Dipol",
+        "Wasserstoffbrücken"
+      ],
+      "hiddenTags": [
+        "Essigsäure",
+        "Carboxylgruppe",
+        "COOH",
+        "London-Dispersion",
+        "Van-der-Waals",
+        "Wechselwirkungen",
+        "funktionelle Gruppen",
+        "Polarität",
+        "H-Brücken"
+      ],
+      "createdAt": "2026-11-14"
+    },
+    {
+      "id": "ketone-wechselwirkungen",
+      "title": "Ketone: Wechselwirkungen (Propanon)",
+      "file": "./gifs/ketone-wechselwirkungen.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "Ketone",
+        "Propanon",
+        "LDWW",
+        "Dipol-Dipol",
+        "Wasserstoffbrücken"
+      ],
+      "hiddenTags": [
+        "Aceton",
+        "Carbonylgruppe",
+        "Ketogruppe",
+        "London-Dispersion",
+        "Van-der-Waals",
+        "Wechselwirkungen",
+        "funktionelle Gruppen",
+        "Polarität",
+        "H-Brücken",
+        "kein OH"
+      ],
+      "createdAt": "2026-11-14"
+    },
+    {
+      "id": "aldehyde-wechselwirkungen",
+      "title": "Aldehyde: Wechselwirkungen (Ethanal)",
+      "file": "./gifs/aldehyde-wechselwirkungen.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "Aldehyde",
+        "Ethanal",
+        "LDWW",
+        "Dipol-Dipol",
+        "Wasserstoffbrücken"
+      ],
+      "hiddenTags": [
+        "Carbonylgruppe",
+        "Aldehydgruppe",
+        "Acetaldehyd",
+        "London-Dispersion",
+        "Van-der-Waals",
+        "Wechselwirkungen",
+        "funktionelle Gruppen",
+        "Polarität",
+        "H-Brücken",
+        "kein OH"
+      ],
+      "createdAt": "2026-11-14"
+    },
+    {
+      "id": "alkohole-wechselwirkungen",
+      "title": "Alkohole: Wechselwirkungen (Ethanol)",
+      "file": "./gifs/alkohole-wechselwirkungen.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "Alkohole",
+        "Ethanol",
+        "LDWW",
+        "Dipol-Dipol",
+        "Wasserstoffbrücken"
+      ],
+      "hiddenTags": [
+        "OH-Gruppe",
+        "Hydroxylgruppe",
+        "London-Dispersion",
+        "Van-der-Waals",
+        "Wechselwirkungen",
+        "funktionelle Gruppen",
+        "Polarität",
+        "H-Brücken"
+      ],
+      "createdAt": "2026-11-14"
+    },
+    {
       "id": "benennung-2-ethylhexan-1-3-diol-stammname-1",
       "title": "Benennung von 2-Ethylhexan-1,3-diol: Längste C-Kette (1)",
       "file": "./gifs/benennung-2-ethylhexan-1-3-diol-stammname-1.gif",
