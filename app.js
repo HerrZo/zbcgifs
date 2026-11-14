@@ -289,6 +289,84 @@ const FALLBACK_DATA = {
   },
   "gifs": [
     {
+      "id": "london-dispersions-spontaner-dipol-1",
+      "title": "London-Dispersions-Wechselwirkungen: Spontaner Dipol (1)",
+      "file": "./gifs/london-dispersions-spontaner-dipol-1.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "London-Kräfte",
+        "Spontaner Dipol",
+        "Van-der-Waals-Kräfte",
+        "Partialladung",
+        "Helium"
+      ],
+      "hiddenTags": [
+        "Dispersionswechselwirkungen",
+        "London-Dispersions-Kräfte",
+        "temporärer Dipol",
+        "momentaner Dipol",
+        "unpolare Teilchen",
+        "Edelgase",
+        "Elektronenhülle",
+        "Elektronenwolke",
+        "Ladungsverschiebung",
+        "asymmetrische Ladungsverteilung",
+        "delta plus",
+        "delta minus",
+        "δ+",
+        "δ-",
+        "Zwischenmolekulare Kräfte",
+        "Wechselwirkungskonzept",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-14",
+      "series": "London-Dispersions-Wechselwirkungen",
+      "step": 1
+    },
+    {
+      "id": "london-dispersions-induzierte-dipole-2",
+      "title": "London-Dispersions-Wechselwirkungen: Induzierte Dipole (2)",
+      "file": "./gifs/london-dispersions-induzierte-dipole-2.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "London-Kräfte",
+        "Induzierter Dipol",
+        "Van-der-Waals-Kräfte",
+        "Spontaner Dipol",
+        "Helium"
+      ],
+      "hiddenTags": [
+        "Dispersionswechselwirkungen",
+        "London-Dispersions-Kräfte",
+        "Polarisierbarkeit",
+        "Ladungsverschiebung",
+        "Nachbaratome",
+        "Anziehungskräfte",
+        "unpolare Moleküle",
+        "Edelgase",
+        "Elektronenhülle",
+        "delta plus",
+        "delta minus",
+        "δ+",
+        "δ-",
+        "Zwischenmolekulare Kräfte",
+        "Wechselwirkungskonzept",
+        "Siedepunkt",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-14",
+      "series": "London-Dispersions-Wechselwirkungen",
+      "step": 2
+    },
+    {
       "id": "propanon-dipol-dipol-wechselwirkungen",
       "title": "Dipol-Dipol-Wechselwirkungen zwischen Propanon-Molekülen",
       "file": "./gifs/propanon-dipol-dipol-wechselwirkungen.gif",
