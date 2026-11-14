@@ -289,6 +289,39 @@
   },
   "gifs": [
     {
+      "id": "propanon-dipol-dipol-wechselwirkungen",
+      "title": "Dipol-Dipol-Wechselwirkungen zwischen Propanon-Molekülen",
+      "file": "./gifs/propanon-dipol-dipol-wechselwirkungen.gif",
+      "categories": [
+        "C10 LB 3",
+        "C12 LB 4"
+      ],
+      "tags": [
+        "Dipol-Dipol-Kräfte",
+        "Propanon",
+        "Zwischenmolekulare Kräfte",
+        "Partialladung"
+      ],
+      "hiddenTags": [
+        "Aceton",
+        "Ketone",
+        "Carbonylgruppe",
+        "Dipolmolekül",
+        "Dipol-Dipol-Wechselwirkung",
+        "Anziehungskräfte",
+        "Wechselwirkungskonzept",
+        "delta plus",
+        "delta minus",
+        "δ+",
+        "δ-",
+        "Polare Elektronenpaarbindung",
+        "Sauerstoff",
+        "Methylgruppe",
+        "Siedepunkt"
+      ],
+      "createdAt": "2026-11-14"
+    },
+    {
       "id": "co2-polaritaet-tauziehen",
       "title": "Bindungs- vs. Molekülpolarität am CO₂-Molekül",
       "file": "./gifs/co2-polaritaet-tauziehen.gif",
