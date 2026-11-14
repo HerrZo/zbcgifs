@@ -289,6 +289,124 @@
   },
   "gifs": [
     {
+      "id": "benennung-2-ethylhexan-1-3-diol-stammname-1",
+      "title": "Benennung von 2-Ethylhexan-1,3-diol: Längste C-Kette (1)",
+      "file": "./gifs/benennung-2-ethylhexan-1-3-diol-stammname-1.gif",
+      "categories": [
+        "C10 LB 1",
+        "C10 LB 3",
+        "C12 LB 1",
+        "C12 LB 5"
+      ],
+      "tags": [
+        "Nomenklatur",
+        "Alkohole",
+        "Stammname",
+        "Längste Kette",
+        "Funktionelle Gruppen"
+      ],
+      "hiddenTags": [
+        "2-Ethylhexan-1,3-diol",
+        "Hexan-1,3-diol",
+        "Hexan",
+        "Diol",
+        "Alkanole",
+        "Hydroxygruppe",
+        "OH-Gruppe",
+        "IUPAC",
+        "Benennung",
+        "Kohlenwasserstoffe",
+        "Hauptkette",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-14",
+      "series": "Benennung von 2-Ethylhexan-1,3-diol",
+      "step": 1
+    },
+    {
+      "id": "benennung-2-ethylhexan-1-3-diol-funktionelle-gruppen-2",
+      "title": "Benennung von 2-Ethylhexan-1,3-diol: Priorität & Endung (2)",
+      "file": "./gifs/benennung-2-ethylhexan-1-3-diol-funktionelle-gruppen-2.gif",
+      "categories": [
+        "C10 LB 1",
+        "C10 LB 3",
+        "C12 LB 1",
+        "C12 LB 5"
+      ],
+      "tags": [
+        "Nomenklatur",
+        "Priorität",
+        "Funktionelle Gruppen",
+        "Endung",
+        "Positionsnummer"
+      ],
+      "hiddenTags": [
+        "2-Ethylhexan-1,3-diol",
+        "Hexan-1,3-diol",
+        "Diol",
+        "Alkohole",
+        "Alkanole",
+        "Hydroxygruppe",
+        "Carboxygruppe",
+        "Aldehydgruppe",
+        "Ketogruppe",
+        "Carbonylgruppe",
+        "-ol",
+        "-al",
+        "-on",
+        "-säure",
+        "Anzahl",
+        "di",
+        "tri",
+        "IUPAC",
+        "Benennung",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-14",
+      "series": "Benennung von 2-Ethylhexan-1,3-diol",
+      "step": 2
+    },
+    {
+      "id": "benennung-2-ethylhexan-1-3-diol-seitenketten-3",
+      "title": "Benennung von 2-Ethylhexan-1,3-diol: Seitenketten (3)",
+      "file": "./gifs/benennung-2-ethylhexan-1-3-diol-seitenketten-3.gif",
+      "categories": [
+        "C10 LB 1",
+        "C10 LB 3",
+        "C12 LB 1",
+        "C12 LB 5"
+      ],
+      "tags": [
+        "Nomenklatur",
+        "Seitenketten",
+        "Alkylgruppen",
+        "Positionsnummer",
+        "Alkohole"
+      ],
+      "hiddenTags": [
+        "2-Ethylhexan-1,3-diol",
+        "Hexan-1,3-diol",
+        "Ethyl",
+        "Ethylgruppe",
+        "Methyl",
+        "Propyl",
+        "Alkylreste",
+        "alphabetisch",
+        "Verzweigung",
+        "Hydroxygruppe",
+        "Diol",
+        "IUPAC",
+        "Benennung",
+        "CHEM10",
+        "CHEM12"
+      ],
+      "createdAt": "2026-11-14",
+      "series": "Benennung von 2-Ethylhexan-1,3-diol",
+      "step": 3
+    },
+    {
       "id": "h2o-wasserstoffbruecken",
       "title": "Wasserstoffbrücken zwischen H₂O-Molekülen",
       "file": "./gifs/h2o-wasserstoffbruecken.gif",
