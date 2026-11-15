@@ -289,6 +289,58 @@
   },
   "gifs": [
     {
+      "id": "genwirkkette-farbstoffsynthese",
+      "title": "Genwirkkette (Farbstoffsynthese)",
+      "file": "./gifs/genwirkkette-farbstoffsynthese.gif",
+      "categories": [
+        "B9 LB 3",
+        "B12 LB 2",
+        "B13 LB 3"
+      ],
+      "tags": [
+        "Genwirkkette",
+        "Enzyme",
+        "Gene",
+        "Merkmalsausbildung",
+        "Substratspezifität"
+      ],
+      "hiddenTags": [
+        "Gen",
+        "Gen 1",
+        "Gen 2",
+        "Gen 3",
+        "Enzym A",
+        "Enzym B",
+        "Enzym C",
+        "Ausgangsstoff",
+        "Zwischenprodukt 1",
+        "Zwischenprodukt 2",
+        "Endprodukt",
+        "Farbstoff",
+        "gelber Farbstoff",
+        "roter Farbstoff",
+        "DNA",
+        "Zellkern",
+        "Proteinbiosynthese",
+        "Ein-Gen-ein-Enzym-Hypothese",
+        "Ein-Gen-ein-Polypeptid-Hypothese",
+        "Schlüssel-Schloss-Prinzip",
+        "aktives Zentrum",
+        "Stoffwechselweg",
+        "Stoffwechselkette",
+        "Reaktionskette",
+        "Genetik",
+        "Mutation",
+        "Stoffwechselblock",
+        "Merkmal",
+        "Phänotyp",
+        "BIO9",
+        "BIO12",
+        "BIO13"
+      ],
+      "createdAt": "2026-11-15"
+    },
+    {
       "id": "protein-faltungsebenen-zoom",
       "title": "Strukturebenen der Proteine (Primär- bis Quartärstruktur)",
       "file": "./gifs/protein-faltungsebenen-zoom.gif",
