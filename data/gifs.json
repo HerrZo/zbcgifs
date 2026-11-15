@@ -448,38 +448,6 @@
       "createdAt": "2026-11-15"
     },
     {
-      "id": "kennzeichen-des-lebens",
-      "title": "Kennzeichen des Lebens",
-      "file": "./gifs/kennzeichen-des-lebens.gif",
-      "categories": [
-        "NT5 LB 2.2"
-      ],
-      "tags": [
-        "Kennzeichen des Lebens",
-        "Stoffwechsel",
-        "Wachstum",
-        "Zellen",
-        "Reizbarkeit"
-      ],
-      "hiddenTags": [
-        "Lebewesen",
-        "Bewegung",
-        "Fortpflanzung",
-        "Vermehrung",
-        "Reaktion",
-        "Reiz",
-        "Zellaufbau",
-        "Ernährung",
-        "Natur und Technik",
-        "5. Klasse",
-        "Jahrgangsstufe 5",
-        "Biologie",
-        "Grundlagen",
-        "Übersicht"
-      ],
-      "createdAt": "2026-11-15"
-    },
-    {
       "id": "stoffwechsel-grundlagen",
       "title": "Grundlagen des Stoffwechsels",
       "file": "./gifs/stoffwechsel-grundlagen.gif",
