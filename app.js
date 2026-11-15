@@ -289,6 +289,56 @@ const FALLBACK_DATA = {
   },
   "gifs": [
     {
+      "id": "protein-faltungsebenen-zoom",
+      "title": "Strukturebenen der Proteine (Primär- bis Quartärstruktur)",
+      "file": "./gifs/protein-faltungsebenen-zoom.gif",
+      "categories": [
+        "C13 LB 4",
+        "B12 LB 2",
+        "B13 LB 3",
+        "B10 LB 3"
+      ],
+      "tags": [
+        "Proteine",
+        "Strukturebenen",
+        "Primärstruktur",
+        "Sekundärstruktur",
+        "Quartärstruktur"
+      ],
+      "hiddenTags": [
+        "Faltungsebenen",
+        "Proteinfaltung",
+        "Tertiärstruktur",
+        "Aminosäuren",
+        "Aminosäuresequenz",
+        "Peptidbindung",
+        "Peptidkette",
+        "Polypeptid",
+        "Polypeptidkette",
+        "Alpha-Helix",
+        "α-Helix",
+        "Beta-Faltblatt",
+        "β-Faltblatt",
+        "Wasserstoffbrücken",
+        "H-Brücken",
+        "Disulfidbrücke",
+        "Seitenketten",
+        "Untereinheiten",
+        "Proteinkomplex",
+        "Hämoglobin",
+        "Glycin",
+        "Serin",
+        "Alanin",
+        "Valin",
+        "Cystein",
+        "Biochemie",
+        "Enzymstruktur",
+        "Struktur-Funktions-Beziehung",
+        "Zoom"
+      ],
+      "createdAt": "2026-11-15"
+    },
+    {
       "id": "fettspaltung-lipase-hydrolyse",
       "title": "Fettspaltung durch Lipase (Hydrolyse eines Fettes)",
       "file": "./gifs/fettspaltung-lipase-hydrolyse.gif",
