@@ -289,6 +289,94 @@
   },
   "gifs": [
     {
+      "id": "iod-staerke-einlagerung",
+      "title": "Iod-Stärke-Nachweis: Einlagerung in die Amylose-Helix",
+      "file": "./gifs/iod-staerke-einlagerung.gif",
+      "categories": [
+        "C13 LB 4",
+        "C12 LB 3",
+        "C13 LB 2",
+        "C10 LB 3",
+        "B10 LB 3",
+        "B13 LB 3",
+        "NT6 LB 1.2"
+      ],
+      "tags": [
+        "Iod-Stärke-Nachweis",
+        "Amylose-Helix",
+        "Iodstärke",
+        "Blaufärbung",
+        "Einschlussverbindung"
+      ],
+      "hiddenTags": [
+        "Iod",
+        "Jod",
+        "Iodmolekül",
+        "I2",
+        "Iodid",
+        "Iodid-Ion",
+        "I-",
+        "Iod-Iodid-Lösung",
+        "Iod-Kaliumiodid-Lösung",
+        "Lugolsche Lösung",
+        "Stärke",
+        "Stärkelösung",
+        "Amylose",
+        "Polysaccharid",
+        "Kohlenhydrate",
+        "Polyiodid",
+        "I5-",
+        "I3-",
+        "Iod-Stärke-Komplex",
+        "Einlagerung",
+        "Interkalation",
+        "Reagenzglas",
+        "Nachweisreaktion",
+        "Nährstoffnachweis",
+        "Makromoleküle",
+        "Glucose",
+        "CHEM10",
+        "CHEM12",
+        "CHEM13",
+        "BIO10",
+        "BIO13",
+        "NUT6"
+      ],
+      "createdAt": "2026-11-15"
+    },
+    {
+      "id": "kennzeichen-des-lebens",
+      "title": "Kennzeichen des Lebens",
+      "file": "./gifs/kennzeichen-des-lebens.gif",
+      "categories": [
+        "NT5 LB 2.2"
+      ],
+      "tags": [
+        "Kennzeichen des Lebens",
+        "Stoffwechsel",
+        "Wachstum",
+        "Zellen",
+        "Reizbarkeit"
+      ],
+      "hiddenTags": [
+        "Lebewesen",
+        "Bewegung",
+        "Fortpflanzung",
+        "Vermehrung",
+        "Reaktion",
+        "Reiz",
+        "Zellaufbau",
+        "Ernährung",
+        "Natur und Technik",
+        "5. Klasse",
+        "Jahrgangsstufe 5",
+        "Biologie",
+        "Grundlagen",
+        "Übersicht"
+      ],
+      "createdAt": "2026-11-15"
+    },
+    {
       "id": "stoffwechsel-grundlagen",
       "title": "Grundlagen des Stoffwechsels",
       "file": "./gifs/stoffwechsel-grundlagen.gif",
