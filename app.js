@@ -289,6 +289,46 @@ const FALLBACK_DATA = {
   },
   "gifs": [
     {
+      "id": "stoffwechsel-grundlagen",
+      "title": "Grundlagen des Stoffwechsels",
+      "file": "./gifs/stoffwechsel-grundlagen.gif",
+      "categories": [
+        "B10 LB 3"
+      ],
+      "tags": [
+        "Stoffwechsel",
+        "Aufnahme",
+        "Umsetzung",
+        "Abgabe",
+        "System Mensch"
+      ],
+      "hiddenTags": [
+        "Metabolismus",
+        "Nahrung",
+        "Sauerstoff",
+        "O2",
+        "Wasser",
+        "H2O",
+        "Kohlenstoffdioxid",
+        "CO2",
+        "Energie",
+        "Wärme",
+        "Exkrete",
+        "Harn",
+        "Kot",
+        "Ausscheidung",
+        "Körpermasse",
+        "Aufbau",
+        "Transport",
+        "chemische Umsetzung",
+        "Biologie",
+        "10. Klasse",
+        "Jahrgangsstufe 10",
+        "Grundlagen"
+      ],
+      "createdAt": "2026-11-15"
+    },
+    {
       "id": "carbonsaeuren-wechselwirkungen",
       "title": "Carbonsäuren: Wechselwirkungen (Ethansäure)",
       "file": "./gifs/carbonsaeuren-wechselwirkungen.gif",
